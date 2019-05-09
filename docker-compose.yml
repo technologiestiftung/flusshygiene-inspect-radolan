@@ -1,0 +1,14 @@
+version: '3'
+services:
+  wradlib:
+    container_name: 'wradlib-radolan-test'
+    build:
+      context: '.'
+      dockerfile: 'Dockerfile'
+    volumes:
+      - './data:/root/data'
+      - './src:/root/src'
+      - './out:/root/out'
+    environment:
+      - WRADLIB_DATA=/root/data
+    command: tail -f /dev/null
