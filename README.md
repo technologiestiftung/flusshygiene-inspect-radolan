@@ -17,7 +17,6 @@ docker-compose up
 Now in another session:  
 
 ```bash
-in another shell session
 $ docker exec -it wradlib-radolan-test  /bin/bash
 $ source activate wradlib
 $ cd /root/src
