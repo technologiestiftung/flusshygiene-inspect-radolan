@@ -98,6 +98,11 @@ RUN source activate wradlib && \
     unzip && \
     conda clean -tipy
 
+WORKDIR /root
+
+COPY ./data ./data
+COPY ./src ./src
+COPY ./out ./out
 # RUN source activate wradlib
 
-# CMD ["/bin/bash"]
+CMD ["tail", "-f", "/dev/null"]

@@ -1,0 +1,7 @@
+*.tif
+.vscode
+.gitignore
+Dockerfile
+docker-compose.yml
+LICENSE
+README.md

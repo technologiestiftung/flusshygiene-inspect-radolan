@@ -2,16 +2,26 @@
 
 This is a setup to inspect Radolan binary files using the [Python wradlib library](https://docs.wradlib.org/en/stable/index.html) and totally based on [their docker setup](https://github.com/wradlib/wradlib-docker).  
 
+It is meant for usage with docker-compose in development off the flusshygiene project.  
+
+
 ## Usage
 
-Basic instructions how to run this.  
-
-
-```bash
-git clone git@github.com:technologiestiftung/flusshygiene-inspect-radolan.git
-cd flusshygiene-inspect-radolan
-docker-compose up
-# might take a while
+```Dockerfile
+version: '3'
+services:
+  wradlib:
+    container_name: 'wradlib-radolan-test'
+    image: technologiestiftung/inspect-radolan
+    # build:
+    #   context: '.'
+    #   dockerfile: 'Dockerfile'
+    volumes:
+      - './data:/root/data'
+      - './src:/root/src'
+      - './out:/root/out'
+    environment:
+      - WRADLIB_DATA=/root/data
 ```
 
 Now in another session:  
@@ -45,6 +55,16 @@ $ python inspector.py
 The folders 
 
 `./src`, `./data` and `./out` are mapped from the container to the local filesystem.
+
+## Running from source
+
+
+```bash
+git clone git@github.com:technologiestiftung/flusshygiene-inspect-radolan.git
+cd flusshygiene-inspect-radolan
+docker-compose up
+# might take a while
+```
 
 ## License
 
