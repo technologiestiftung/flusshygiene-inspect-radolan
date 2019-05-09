@@ -2,8 +2,10 @@
 
 This is a setup to inspect Radolan binary files using the [Python wradlib library](https://docs.wradlib.org/en/stable/index.html) and totally based on [their docker setup](https://github.com/wradlib/wradlib-docker).  
 
+## Usage
 
-# Usage
+Basic instructions how to run this.  
+
 
 ```bash
 git clone git@github.com:technologiestiftung/flusshygiene-inspect-radolan.git
@@ -16,10 +18,28 @@ Now in another session:
 
 ```bash
 in another shell session
-docker exec -it wradlib-radolan-test  /bin/bash
-source activate wradlib
-cd /root/src
-python inspector.py
+$ docker exec -it wradlib-radolan-test  /bin/bash
+$ source activate wradlib
+$ cd /root/src
+$ python inspector.py
+> /opt/conda/envs/wradlib/lib/python3.7/site-packages/wradlib/io/xarray.py:951: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+>   class XRadVol(collections.MutableMapping):
+> RX Attributes:
+> producttype: SF
+> datetime: 2006-10-30 18:50:00
+> radarid: 10000
+> datasize: 1620000
+> maxrange: 128 km
+> radolanversion: 1.5.0.1
+> precision: 0.1
+> intervalseconds: 86400
+> nrow: 900
+> ncol: 900
+> radarlocations: ['bln', 'drs', 'eis', 'emd', 'ess', 'fbg', 'fld', 'fra', 'ham', 'han', 'muc', 'neu', 'nhb', 'ros', 'tur', 'umd']
+> radardays: ['bln 23', 'drs 23', 'eis 23', 'emd 23', 'ess 23', 'fbg 23', 'fld 23', 'fra 23', 'ham 23', 'han 23', 'muc 23', 'neu 23', 'nhb 23', 'ros 23', 'tur 23', 'umd 23']
+> nodataflag: -9999
+> secondary: []
+> cluttermask: []
 # will output a geotiff.tif file to the folder out
 ```
 
