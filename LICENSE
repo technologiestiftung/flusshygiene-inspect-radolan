@@ -1,39 +1,6 @@
-# Inspect Radolan binary files with wradlib
-
-This is a setup to inspect Radolan binary files using the [Python wradlib library](https://docs.wradlib.org/en/stable/index.html) and totally based on [their docker setup](https://github.com/wradlib/wradlib-docker).  
-
-
-# Usage
-
-```bash
-git clone git@github.com:technologiestiftung/flusshygiene-inspect-radolan.git
-cd flusshygiene-inspect-radolan
-docker-compose up
-# might take a while
-```
-
-Now in another session:  
-
-```bash
-in another shell session
-docker exec -it wradlib-radolan-test  /bin/bash
-source activate wradlib
-cd /root/src
-python inspector.py
-# will output a geotiff.tif file to the folder out
-```
-
-The folders 
-
-`./src`, `./data` and `./out` are mapped from the container to the local filesystem.
-
-## License
-
-Dockerfile based on wradlib Dockerfile which is also MIT licensed
-
 MIT License
 
-Copyright (c) 2017 wradlib developers
+Copyright (c) 2019 Technologie Stiftung Berlin & Fabian Morón Zirfas
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
